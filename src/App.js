@@ -1,26 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Card from "./components/Card/Card";
+import logo from "./assets/images/logo.png";
+import "./App.css";
 
 class App extends Component {
+  state = {};
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
+      <React.Fragment>
+        <nav class="navbar navbar-light bg-light">
+          <a href="/" className="navbar-brand">
+            <img width="60" src={logo} alt="logo" />
+            <span>Wranglers</span>
           </a>
-        </header>
-      </div>
+        </nav>
+
+        <div className="container">
+          <div className="row">
+            <Card />
+            <Card />
+            <Card />
+          </div>
+        </div>
+      </React.Fragment>
     );
   }
 }
