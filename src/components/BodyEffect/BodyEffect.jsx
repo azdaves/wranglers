@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
 import { Link } from "react-router-dom";
+import classes from "./BodyEffect.module.css";
 class BodyEffect extends Component {
-  state = {};
   render() {
     return (
       <React.Fragment>
@@ -18,13 +18,10 @@ class BodyEffect extends Component {
             <Card key={i} data={part} selected={this.props.selected} />
           ))}
         </div>
-        {this.props.count > 3 && (
+        {this.props.partsLength > 0 && (
           <div className="row">
-            <div className="col-12">
-              <Link
-                to="/opinions"
-                className="btn float-right btn-lg btn-primary"
-              >
+            <div className="col-12 text-right">
+              <Link to="/opinions" className={`btn ${classes.nextBtn}`}>
                 Next
               </Link>
             </div>

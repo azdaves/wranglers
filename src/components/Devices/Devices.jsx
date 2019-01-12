@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Card from "../Card/Card";
+import classes from "./Device.module.css";
 
 class Devices extends Component {
   render() {
@@ -21,7 +22,7 @@ class Devices extends Component {
         {this.props.count > 0 && (
           <div className="row">
             <div className="col-12 text-right">
-              <Link to="bodyeffect" className="btn btn-lg btn-primary">
+              <Link to="bodyeffect" className={`btn ${classes.nextBtn}`}>
                 Next
               </Link>
             </div>
