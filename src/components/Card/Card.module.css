@@ -1,0 +1,23 @@
+.card {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid #dadada;
+  box-sizing: border-box;
+}
+
+.header {
+  padding: 0.5em;
+  color: #fefefe;
+  font-size: 20px;
+  margin: 0;
+  transition: all 0.2s;
+}
+
+.img {
+  overflow: hidden;
+}
+
+.count {
+  padding: 1em 0.5em;
+}
