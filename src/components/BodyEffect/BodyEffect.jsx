@@ -8,7 +8,7 @@ class BodyEffect extends Component {
       <React.Fragment>
         <div className="row">
           <div className="col-12">
-            <div className="bg-light border my-2 p-3">
+            <div className={`bg-light border ${classes.desc}`}>
               <h4 className="text-center">{this.props.desc}</h4>
             </div>
           </div>
@@ -21,7 +21,11 @@ class BodyEffect extends Component {
         {this.props.partsLength > 0 && (
           <div className="row">
             <div className="col-12 text-right">
-              <Link to="/opinions" onClick={this.props.updateScore} className={`btn ${classes.nextBtn}`}>
+              <Link
+                to="/opinions"
+                onClick={this.props.updateScore}
+                className={`btn ${classes.nextBtn}`}
+              >
                 Next
               </Link>
             </div>

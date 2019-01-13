@@ -9,7 +9,7 @@ class Opinions extends Component {
       <React.Fragment>
         <div className="row">
           <div className="col-12">
-            <div className="bg-light border my-2 p-3">
+            <div className={`bg-light border ${classes.desc}`}>
               <h4 className="text-center">{this.props.desc}</h4>
             </div>
           </div>
@@ -19,14 +19,19 @@ class Opinions extends Component {
             <Card key={i} data={opinion} selected={this.props.selected} />
           ))}
         </div>
-        {this.props.opinionLength > 0 && <div className="row">
-          <div className="col-12 text-right">
-            <Link to="/survey" onClick={this.props.updateScore} className={`btn ${classes.nextBtn}`}>
-              Next
-            </Link>
+        {this.props.opinionLength > 0 && (
+          <div className="row">
+            <div className="col-12 text-right">
+              <Link
+                to="/survey"
+                onClick={this.props.updateScore}
+                className={`btn ${classes.nextBtn}`}
+              >
+                Next
+              </Link>
+            </div>
           </div>
-        </div>}
-        
+        )}
       </React.Fragment>
     );
   }

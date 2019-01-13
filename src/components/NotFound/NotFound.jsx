@@ -4,7 +4,13 @@ class NotFound extends Component {
   state = {};
   render() {
     return (
-      <h1 className="alert alert-danger text-center my-5">Page is not found</h1>
+      <React.Fragment>
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1 className="alert alert-danger text-center">Page is not found</h1>
+      </React.Fragment>
     );
   }
 }

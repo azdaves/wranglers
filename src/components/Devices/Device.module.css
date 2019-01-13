@@ -9,3 +9,15 @@
   background: rgba(79, 59, 112, 0.9) !important;
   color: white !important;
 }
+
+.desc {
+  margin: 1em 0;
+  padding: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .desc {
+    margin-top: 100px;
+  }
+}

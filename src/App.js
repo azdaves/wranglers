@@ -59,8 +59,8 @@ class App extends Component {
       }
       return d;
     });
-
     const selection = this.state.devices.filter(d => d.selected);
+    localStorage.setItem("devices", selection.map(s => s.name));
     const count = selection.length > 0 ? 3 : 0;
     this.setState({ devices, count });
   };
@@ -82,7 +82,9 @@ class App extends Component {
       return p;
     });
 
+    const selection = this.state.bodyParts.filter(p => p.selected);
     const partsLength = this.state.bodyParts.filter(p => p.selected).length;
+    localStorage.setItem("body_parts", selection.map(s => s.name));
     this.setState({ bodyParts, partsLength });
   };
 
@@ -104,7 +106,9 @@ class App extends Component {
       return o;
     });
 
+    const selection = this.state.opinions.filter(p => p.selected);
     const opinionLength = this.state.opinions.filter(o => o.selected).length;
+    localStorage.setItem("opinion", selection.map(s => s.text));
     this.setState({ opinions, opinionLength });
   };
 
@@ -115,7 +119,7 @@ class App extends Component {
 
   handleUpdateScore = () => {
     const headerCount = this.state.count;
-    const sectionNumber = this.state.sectionNumber +1;
+    const sectionNumber = this.state.sectionNumber + 1;
     this.setState({ headerCount, sectionNumber });
   };
 
@@ -136,7 +140,7 @@ class App extends Component {
               </div>
               <div className="col-6">
                 <h5 className={classes.count}>
-                  <span className="text-muted">score </span>
+                  <span className="text-muted d-none d-sm-inline">score </span>
                   <span
                     className={`badge ${
                       this.state.headerCount > 0
@@ -149,7 +153,6 @@ class App extends Component {
                 </h5>
               </div>
             </div>
-
           </div>
         </nav>
         {this.state.loadingImg && (
@@ -165,7 +168,7 @@ class App extends Component {
           src={vapingBG}
           style={{ opacity: "0", transition: "all 0.3s" }}
           onLoad={e => this.handleImgLoad(e)}
-          className="w-100 h-auto mt-5"
+          className="w-100 h-auto pt-5 d-none d-md-block"
           alt="background"
         />
         <div className="container mb-5">
