@@ -22,7 +22,11 @@ class Devices extends Component {
         {this.props.count > 0 && (
           <div className="row">
             <div className="col-12 text-right">
-              <Link to="bodyeffect" className={`btn ${classes.nextBtn}`}>
+              <Link
+                to="bodyeffect"
+                onClick={this.props.updateScore}
+                className={`btn ${classes.nextBtn}`}
+              >
                 Next
               </Link>
             </div>

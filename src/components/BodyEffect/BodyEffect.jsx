@@ -21,7 +21,7 @@ class BodyEffect extends Component {
         {this.props.partsLength > 0 && (
           <div className="row">
             <div className="col-12 text-right">
-              <Link to="/opinions" className={`btn ${classes.nextBtn}`}>
+              <Link to="/opinions" onClick={this.props.updateScore} className={`btn ${classes.nextBtn}`}>
                 Next
               </Link>
             </div>

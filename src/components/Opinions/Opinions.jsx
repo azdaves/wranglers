@@ -21,7 +21,7 @@ class Opinions extends Component {
         </div>
         {this.props.opinionLength > 0 && <div className="row">
           <div className="col-12 text-right">
-            <Link to="/survey" className={`btn ${classes.nextBtn}`}>
+            <Link to="/survey" onClick={this.props.updateScore} className={`btn ${classes.nextBtn}`}>
               Next
             </Link>
           </div>

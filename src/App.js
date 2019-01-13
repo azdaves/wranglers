@@ -21,6 +21,8 @@ class App extends Component {
   state = {
     loadingImg: true,
     count: 0,
+    headerCount: 0,
+    sectionNumber: 1,
     partsLength: 0,
     opinionLength: 0,
     devices: [
@@ -111,6 +113,12 @@ class App extends Component {
     this.setState({ loadingImg: false });
   };
 
+  handleUpdateScore = () => {
+    const headerCount = this.state.count;
+    const sectionNumber = this.state.sectionNumber +1;
+    this.setState({ headerCount, sectionNumber });
+  };
+
   render() {
     return (
       <React.Fragment>
@@ -131,14 +139,17 @@ class App extends Component {
                   <span className="text-muted">score </span>
                   <span
                     className={`badge ${
-                      this.state.count > 0 ? "badge-success" : "badge-danger"
+                      this.state.headerCount > 0
+                        ? "badge-success"
+                        : "badge-danger"
                     }`}
                   >
-                    {this.state.count}
+                    {this.state.headerCount}
                   </span>
                 </h5>
               </div>
             </div>
+
           </div>
         </nav>
         {this.state.loadingImg && (
@@ -168,6 +179,8 @@ class App extends Component {
             selectedDevice={this.handleDevice}
             selectedPart={this.handlePart}
             selectedOpinion={this.handleOpinion}
+            updateScore={this.handleUpdateScore}
+            sectionNumber={this.state.sectionNumber}
           />
         </div>
 

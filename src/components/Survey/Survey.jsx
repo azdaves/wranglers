@@ -44,7 +44,7 @@ class Survey extends Component {
           />
         </div>
 
-        <button type="submit" className={`btn ${classes.nextBtn}`}>
+        <button type="submit" onClick={this.props.updateScore} className={`btn ${classes.nextBtn}`}>
           Submit
         </button>
       </form>
