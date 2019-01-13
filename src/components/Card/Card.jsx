@@ -5,7 +5,7 @@ class Card extends Component {
   selectedImgStyle = {
     transition: "all 0.2s",
     opacity: "0.7",
-    transform: "scale(1.1)",
+    transform: "scale(1.1)"
   };
 
   unselectImgStyle = {
@@ -20,7 +20,7 @@ class Card extends Component {
     background: "#4f3b70",
     color: "#fefefe"
   };
-  
+
   unselectText = {
     transition: "all 0.2s",
     background: "#fefefe",
@@ -36,33 +36,40 @@ class Card extends Component {
           className={`shadow-sm ${classes.card}`}
           onClick={() => this.props.selected(data)}
         >
-            {data.url ? (
-              <React.Fragment>
-          <p
-            className={classes.header}
-            style={{
-              color: data.selected ? "white" : "#333333",
-              background: data.selected ? "#4f3b70" : "#f8f9fa"
-            }}
-          >
-            {data.name}
-          </p>
-          <div className={classes.img}>
-              <img
-                width="100%"
-                style={
-                  data.selected ? this.selectedImgStyle : this.unselectImgStyle
-                }
-                src={data.url}
-                alt="something"
-              />
-          </div>
-</React.Fragment>
-            ) : (
-              <p className="p-3 m-0" style={
-                  data.selected ? this.selectedText : this.unselectedText
-                }>{data.text}</p>
-            )}
+          {data.url ? (
+            <React.Fragment>
+              <p
+                className={classes.header}
+                style={{
+                  color: data.selected ? "white" : "#333333",
+                  background: data.selected ? "#4f3b70" : "#f8f9fa"
+                }}
+              >
+                {data.name}
+              </p>
+
+              <div className={classes.img}>
+                {data.selected && <div className={classes.backdrop} />}
+                <img
+                  width="100%"
+                  style={
+                    data.selected
+                      ? this.selectedImgStyle
+                      : this.unselectImgStyle
+                  }
+                  src={data.url}
+                  alt="something"
+                />
+              </div>
+            </React.Fragment>
+          ) : (
+            <p
+              className="p-3 m-0"
+              style={data.selected ? this.selectedText : this.unselectedText}
+            >
+              {data.text}
+            </p>
+          )}
         </div>
       </div>
     );

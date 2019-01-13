@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Card from "../Card/Card";
 import { Link } from "react-router-dom";
+import classes from "./Opinions.module.css";
 
 class Opinions extends Component {
-  
   render() {
     return (
       <React.Fragment>
@@ -19,18 +19,14 @@ class Opinions extends Component {
             <Card key={i} data={opinion} selected={this.props.selected} />
           ))}
         </div>
-        {this.props.count > 3 && (
-          <div className="row">
-            <div className="col-12">
-              <Link
-                to="bodyeffect"
-                className="btn float-right btn-lg btn-primary"
-              >
-                Next
-              </Link>
-            </div>
+        {this.props.opinionLength > 0 && <div className="row">
+          <div className="col-12 text-right">
+            <Link to="/survey" onClick={this.props.updateScore} className={`btn ${classes.nextBtn}`}>
+              Next
+            </Link>
           </div>
-        )}
+        </div>}
+        
       </React.Fragment>
     );
   }
