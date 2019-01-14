@@ -42,12 +42,12 @@ class App extends Component {
       { url: stomach, name: "Stomach", point: 1 }
     ],
     opinions: [
-      { id: 1, text: "opinion to be added 1" },
-      { id: 2, text: "opinion to be added 2" },
-      { id: 3, text: "opinion to be added 3" },
-      { id: 4, text: "opinion to be added 4" },
-      { id: 5, text: "opinion to be added 5" },
-      { id: 6, text: "opinion to be added 6" }
+      { id: 1, text: "Vaping is a HUGE problem but I am not affected" },
+      { id: 2, text: "Vaping is a HUGE problem AND I am affected" },
+      { id: 3, text: "Vaping is a slight problem but I am not affected" },
+      { id: 4, text: "Vaping is a slight problem AND I am affected" },
+      { id: 5, text: "Vaping is not a problem" },
+      { id: 6, text: "I choose not to give an opinion" }
     ]
   };
 
